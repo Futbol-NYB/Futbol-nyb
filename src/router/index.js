@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePageView from '../views/HomePageView.vue'
-import LigasView from '../views/LigasView.vue'
-import buscarEquipoPorNombre from '../views/SearchTeamView.vue'
+import TeamsView from '../views/TeamsView.vue'
+import SearchTeamView from '../views/SearchTeamView.vue'
+import PlayersView from '../views/PlayersView.vue'
+import SearchPlayerView from '../views/SearchPlayerView.vue'
 
 const routes = [
   {
@@ -12,15 +14,28 @@ const routes = [
   {
     path: '/liga/:nombreLiga',
     name: 'Liga',
-    component: LigasView,
+    component: TeamsView,
     props: true
   },
-  {path: '/equipo/:nombreEquipo',
+  {
+    path: '/equipo/:nombreEquipo',
     name: 'Equipo',
-    component: buscarEquipoPorNombre,
+    component: SearchTeamView,
+    props: true
+  },
+  {
+    path: '/jugador/:nombreJugador',
+    name: 'Jugador',
+    component: SearchPlayerView,
+    props: true
 
+  },
+  {
+    path: '/jugadores/:idTeam',
+    name: 'Jugadores',
+    component: PlayersView,
+    props: true
   }
-
 ]
 
 const router = createRouter({

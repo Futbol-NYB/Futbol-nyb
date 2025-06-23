@@ -33,3 +33,25 @@ export const buscarEquipoPorNombre = async (nombre) => {
   }
 };
 
+export const buscarJugadorPorNombre = async (nombre) => {
+  try {
+    const response = await fetch(`${BASE_URL}/searchplayers.php?p=${encodeURIComponent(nombre)}`);
+    const data = await response.json();
+    return data.player || [];
+  } catch (error) {
+    console.error("Error al buscar jugador:", error);
+    return [];
+  }
+};
+
+export const getJugadorPorEquipo = async (idTeam) => {
+  try {
+    const response = await fetch(`${BASE_URL}/lookup_all_players.php?id=${idTeam}`);
+    const data = await response.json();
+    return data.player || [];
+  } catch (error) {
+    console.error("Error buscando jugadores:", error);
+    return [];
+  }
+};
+
