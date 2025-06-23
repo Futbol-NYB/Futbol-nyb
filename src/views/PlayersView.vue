@@ -1,10 +1,14 @@
 <template>
   <div class="container p-5">
-    <h2 class="display-5 text-center mb-4">
+    <h2 class="display-5 text-center mb-5">
       Jugadores del <span class="text-info">{{ nombreEquipo || "equipo" }}</span>
     </h2>
 
-    <div v-if="loading" class="text-center m-4">
+    <router-link to="/jugador/:nombreJugador" class="btn btn-outline-primary mb-4">
+      Buscar Jugador
+    </router-link>
+
+    <div v-if="loading" class="text-center">
       <div class="spinner-border text-info" role="status">
         <span class="visually-hidden">Cargando...</span>
       </div>

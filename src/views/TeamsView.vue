@@ -1,6 +1,6 @@
 <template>
   <div class="container p-5">
-    <h2 class="display-5 text-center mb-4">
+    <h2 class="display-5 text-center mb-5">
       Equipos de <span class="text-info">{{ nombreLiga }}</span>
     </h2>
 
@@ -8,7 +8,7 @@
       Buscar Equipo
     </router-link>
 
-    <div v-if="loading" class="text-center m-4">
+    <div v-if="loading" class="text-center">
       <div class="spinner-border text-info" role="status">
         <span class="visually-hidden">Cargando...</span>
       </div>
