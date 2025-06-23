@@ -1,8 +1,12 @@
 <template>
-  <div class="container">
-    <h2 class="text-center m-5 display-5">
+  <div class="container p-5">
+    <h2 class="m-5 display-5">
       Equipos de <span class="text-info">{{ nombreLiga }}</span>
     </h2>
+
+    <router-link to="/equipo/:nombreEquipo" class="btn btn-outline-primary">
+      Buscar Equipo
+    </router-link>
 
     <div v-if="loading" class="text-center">
       <div class="spinner-border text-info" role="status">
@@ -11,9 +15,9 @@
       <p class="mt-3">Cargando equipos...</p>
     </div>
 
-    <div v-else class="row g-4">
+    <div v-else class="row g-4 mt-4">
       <div v-for="equipo in equipos" :key="equipo.idTeam" class="col-6 col-md-4 col-lg-3">
-        <div class="card h-100 text-center equipo-card">
+        <div class="card h-100 text-center" id="equipo-card">
           <div class="card-body">
             <img :src="equipo.strTeamBadge" alt="Escudo" class="img-fluid mb-3" />
             <h5 class="card-title">{{ equipo.strTeam }}</h5>
@@ -53,17 +57,15 @@ watch(
 );
 </script>
 
-<style scoped>
-.equipo-card {
-  background-color: rgba(0, 72, 255, 0.7);
-  border-radius: 12px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+<style>
+#equipo-card {
+  background-color: rgba(0, 72, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.equipo-card:hover {
-  transform: scale(1.05);
+#equipo-card:hover {
   background-color: #03e2ff;
   color: white;
-  cursor: pointer;
 }
 </style>

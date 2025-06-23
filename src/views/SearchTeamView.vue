@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container p-5">
     <h1 class="text-center mb-5 display-5">Buscar Equipo</h1>
 
     <form @submit.prevent="buscarEquipo" class="row justify-content-center mb-5">
-      <div class="col-md-6">
+      <div>
         <div class="input-group">
           <input
             v-model="nombreEquipo"
@@ -31,19 +31,12 @@
     </div>
 
     <div v-else class="row g-4">
-      <div
-        v-for="equipo in equipos"
-        :key="equipo.idTeam"
-        class="col-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div class="card equipo-card text-center h-100">
-          <div class="card-body">
-            <img
-              :src="equipo.strTeamBadge"
-              alt="Escudo"
-              class="img-fluid mb-3"
-              style="max-height: 80px"
-            />
+      <div v-for="equipo in equipos" :key="equipo.idTeam" class="">
+        <div class="card equipo-card">
+          <div
+            class="card-body d-flex flex-column align-items-center justify-content-between text-center"
+          >
+            <img :src="equipo.strBadge" alt="Escudo" class="img-fluid m-3" />
             <h5 class="card-title">{{ equipo.strTeam }}</h5>
             <p class="card-text">
               Fundación: {{ equipo.intFormedYear || "Desconocida" }}<br />
@@ -79,15 +72,29 @@ const buscarEquipo = async () => {
 };
 </script>
 
-<style scoped>
+<style>
 .equipo-card {
-  background-color: rgba(0, 72, 255, 0.7);
-  border-radius: 12px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  background-color: rgba(0, 72, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 .equipo-card:hover {
   background-color: #03e2ff;
   color: white;
-  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+.img-fluid {
+  max-width: 200px;
 }
 </style>
