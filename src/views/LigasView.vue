@@ -8,7 +8,7 @@
       Buscar Equipo
     </router-link>
 
-    <div v-if="loading" class="text-center">
+    <div v-if="loading" class="text-center m-4">
       <div class="spinner-border text-info" role="status">
         <span class="visually-hidden">Cargando...</span>
       </div>
@@ -19,7 +19,7 @@
       <div v-for="equipo in equipos" :key="equipo.idTeam" class="col-6 col-md-4 col-lg-3">
         <div class="card h-100 text-center" id="equipo-card">
           <div class="card-body">
-            <img :src="equipo.strTeamBadge" alt="Escudo" class="img-fluid mb-3" />
+            <img :src="equipo.strBadge" alt="Escudo" class="img-fluid mb-3" />
             <h5 class="card-title">{{ equipo.strTeam }}</h5>
           </div>
         </div>
