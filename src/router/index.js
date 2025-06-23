@@ -1,11 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../views/HomePageView.vue'
+import HomePageView from '../views/HomePageView.vue'
+import LigasView from '../views/LigasView.vue'
+import buscarEquipoPorNombre from '../views/SearchTeamView.vue'
+
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomePage
+    component: HomePageView
+  },
+  {
+    path: '/liga/:nombreLiga',
+    name: 'Liga',
+    component: LigasView,
+    props: true
+  },
+  {path: '/equipo/:nombreEquipo',
+    name: 'Equipo',
+    component: buscarEquipoPorNombre,
+
   }
+
 ]
 
 const router = createRouter({

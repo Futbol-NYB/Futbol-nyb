@@ -5,7 +5,7 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 
-import './style.css'        // tus estilos personales (opcional)
+import './style.css'
 
 createApp(App)
   .use(router)
