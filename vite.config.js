@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/Futbol-nyb/', // 👈 usa exactamente el nombre del repo
   plugins: [vue()],
 })
