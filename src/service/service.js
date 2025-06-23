@@ -7,7 +7,12 @@ export const getLigas = () => {
     { nombre: "Spanish La Liga" },
     { nombre: "German Bundesliga" },
     { nombre: "Italian Serie A" },
-    { nombre: "French Ligue 1" }
+    { nombre: "French Ligue 1" },
+    { nombre: "Belgian Pro League"},
+    { nombre: "English League Championship"},
+    { nombre: "Scottish Premier League"},
+    { nombre: "Greek Superleague Greece"},
+    { nombre: "Dutch Eredivisie"},
   ]
 }
 

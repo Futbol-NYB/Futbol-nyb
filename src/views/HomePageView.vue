@@ -1,18 +1,21 @@
 <template>
-  <router-link to="/equipo/:nombreEquipo">Buscar Equipo</router-link>
-
-  <div class="p-6">
-    <h1 class="text-2xl font-bold mb-4 text-center">Ligas de Fútbol</h1>
-    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <li
-        v-for="liga in ligas"
-        :key="liga.nombre"
-        @click="goToLiga(liga.nombre)"
-        class="cursor-pointer p-4 bg-blue-100 hover:bg-blue-200 rounded text-center"
-      >
-        {{ liga.nombre }}
-      </li>
-    </ul>
+  <div class="container">
+    <router-link to="/equipo/:nombreEquipo">Buscar Equipo</router-link>
+    <div class="p-3">
+      <h1 id="tittle" class="font-bold mb-4">Ligas de Fútbol</h1>
+      <div class="row">
+        <ul>
+          <li
+            v-for="liga in ligas"
+            :key="liga.nombre"
+            @click="goToLiga(liga.nombre)"
+            id="liga"
+          >
+            {{ liga.nombre }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,3 +30,24 @@ const goToLiga = (nombre) => {
   router.push(`/liga/${encodeURIComponent(nombre)}`);
 };
 </script>
+
+<style scoped>
+#liga {
+  background-color: #0381ff71;
+  position: relative;
+  padding: 100px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#liga:hover {
+  background-color: #03e2ff;
+  color: white;
+}
+
+#tittle {
+  padding: 50px;
+}
+</style>

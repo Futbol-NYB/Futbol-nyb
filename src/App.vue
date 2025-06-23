@@ -10,4 +10,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+</style>
