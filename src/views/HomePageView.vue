@@ -3,10 +3,11 @@
     <h1 class="fw-bold p-5 text-center">
       Ligas de <span class="text-info">Fútbol</span>
     </h1>
-    <router-link to="/equipo/:nombreEquipo" class="btn btn-outline-primary">
+    <router-link to="/equipo/:nombreEquipo" class="btn btn-outline-primary m-3">
       Buscar Equipo
     </router-link>
-    <router-link to="/jugador/:nombreJugador" class="btn btn-outline-primary">
+
+    <router-link to="/jugador/:nombreJugador" class="btn btn-outline-primary m-3">
       Buscar Jugador
     </router-link>
     <div class="row g-4 mt-4">

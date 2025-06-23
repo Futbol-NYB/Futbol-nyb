@@ -77,13 +77,15 @@ const buscarJugador = async () => {
 
 <style scoped>
 .equipo-card {
-  background-color: rgba(0, 72, 255, 0.1);
+  background-color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  border-radius: 15px;
+  color: aliceblue;
 }
 
 .equipo-card:hover {
-  background-color: #03e2ff;
+  background-color: #4b0b55;
   color: white;
 }
 
