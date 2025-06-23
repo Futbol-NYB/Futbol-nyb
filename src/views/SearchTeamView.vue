@@ -1,49 +1,59 @@
 <template>
-  <div class="p-6 max-w-xl mx-auto">
-    <h1 class="text-2xl font-bold mb-4 text-center">Buscar Equipo</h1>
+  <div class="container">
+    <h1 class="text-center mb-5 display-5">Buscar Equipo</h1>
 
-    <form @submit.prevent="buscarEquipo" class="mb-6 flex gap-2">
-      <input
-        v-model="nombreEquipo"
-        type="text"
-        placeholder="Ej. Arsenal, Real Madrid..."
-        class="flex-1 border rounded px-4 py-2"
-      />
-      <button
-        type="submit"
-        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Buscar
-      </button>
+    <form @submit.prevent="buscarEquipo" class="row justify-content-center mb-5">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input
+            v-model="nombreEquipo"
+            type="text"
+            class="form-control"
+            placeholder="Ej. Arsenal, Real Madrid..."
+          />
+          <button class="btn btn-info text-white" type="submit">Buscar</button>
+        </div>
+      </div>
     </form>
 
-    <div v-if="loading" class="text-center">Buscando...</div>
+    <div v-if="loading" class="text-center">
+      <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Buscando...</span>
+      </div>
+      <p class="mt-2 text-secondary">Buscando...</p>
+    </div>
 
     <div
       v-else-if="equipos.length === 0 && busquedaRealizada"
-      class="text-center text-gray-500"
+      class="text-center text-secondary"
     >
       No se encontraron equipos.
     </div>
 
-    <ul v-else class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <li
+    <div v-else class="row g-4">
+      <div
         v-for="equipo in equipos"
         :key="equipo.idTeam"
-        class="bg-gray-100 p-4 rounded text-center"
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
       >
-        <img
-          :src="equipo.strTeamBadge"
-          alt="Escudo"
-          class="w-20 h-20 mx-auto mb-2 object-contain"
-        />
-
-        <p class="font-semibold">{{ equipo.strTeam }}</p>
-        <p>{{ equipo.intFormedYear }}</p>
-        <p>{{ equipo.strLocation }}</p>
-        <p class="text-sm text-gray-500">{{ equipo.strLeague }}</p>
-      </li>
-    </ul>
+        <div class="card equipo-card text-center h-100">
+          <div class="card-body">
+            <img
+              :src="equipo.strTeamBadge"
+              alt="Escudo"
+              class="img-fluid mb-3"
+              style="max-height: 80px"
+            />
+            <h5 class="card-title">{{ equipo.strTeam }}</h5>
+            <p class="card-text">
+              Fundación: {{ equipo.intFormedYear || "Desconocida" }}<br />
+              Ubicación: {{ equipo.strLocation || "N/A" }}<br />
+              <small class="text-muted">{{ equipo.strLeague }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -68,3 +78,16 @@ const buscarEquipo = async () => {
   busquedaRealizada.value = true;
 };
 </script>
+
+<style scoped>
+.equipo-card {
+  background-color: rgba(0, 72, 255, 0.7);
+  border-radius: 12px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.equipo-card:hover {
+  background-color: #03e2ff;
+  color: white;
+  transform: scale(1.05);
+}
+</style>

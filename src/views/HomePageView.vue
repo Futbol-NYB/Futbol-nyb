@@ -2,7 +2,9 @@
   <div class="container">
     <router-link to="/equipo/:nombreEquipo">Buscar Equipo</router-link>
     <div class="p-3">
-      <h1 id="tittle" class="font-bold mb-4">Ligas de Fútbol</h1>
+      <h1 id="tittle" class="font-bold mb-4">
+        Ligas de <span class="text-info">Fútbol</span>
+      </h1>
       <div class="row">
         <ul>
           <li
@@ -33,7 +35,7 @@ const goToLiga = (nombre) => {
 
 <style scoped>
 #liga {
-  background-color: #0381ff71;
+  background-color: rgba(0, 72, 255, 0.7);
   position: relative;
   padding: 100px;
   text-align: center;
