@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePageView from '../views/HomePageView.vue'
+import LeaguesView from '../views/LeaguesView.vue'
 import TeamsView from '../views/TeamsView.vue'
 import SearchTeamView from '../views/SearchTeamView.vue'
 import PlayersView from '../views/PlayersView.vue'
@@ -9,26 +10,30 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomePageView
+    component: HomePageView,
+    props: true
   },
   {
-    path: '/liga/:nombreLiga',
-    name: 'Liga',
+    path: '/ligas/:nombrePais',
+    name: 'LigasPorPais',
+    component: LeaguesView,
+    props: true
+},
+  {
+    path: '/equipos/:nombreLiga',
+    name: 'EquiposPorLiga',
     component: TeamsView,
     props: true
   },
   {
-    path: '/equipo/:nombreEquipo',
-    name: 'Equipo',
-    component: SearchTeamView,
-    props: true
+    path: '/equipo/Buscar',
+    name: 'BuscarEquipo',
+    component: SearchTeamView
   },
   {
-    path: '/jugador/:nombreJugador',
-    name: 'Jugador',
-    component: SearchPlayerView,
-    props: true
-
+    path: '/jugador/Buscar',
+    name: 'BuscarJugador',
+    component: SearchPlayerView
   },
   {
     path: '/jugadores/:idTeam',
@@ -37,6 +42,8 @@ const routes = [
     props: true
   }
 ]
+
+
 
 const router = createRouter({
   history: createWebHistory(),

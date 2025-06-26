@@ -30,13 +30,13 @@
       No se encontraron equipos.
     </div>
 
-    <div v-else class="row g-4">
+    <div v-else class="row g-4 card-">
       <div v-for="equipo in equipos" :key="equipo.idTeam" class="">
-        <div class="card equipo-card">
+        <div class="equipo-card">
           <div
-            class="card-body d-flex flex-column align-items-center justify-content-between text-center"
+            class="d-flex flex-column align-items-center justify-content-between text-center"
           >
-            <img :src="equipo.strBadge" alt="Escudo" class="img-fluid m-3" />
+            <img :src="equipo.strBadge" alt="Escudo" class="card-escudo img-fluid m-4" />
             <h5 class="card-title">{{ equipo.strTeam }}</h5>
             <p class="card-text">
               Fundación: {{ equipo.intFormedYear || "Desconocida" }}<br />
@@ -74,14 +74,24 @@ const buscarEquipo = async () => {
 
 <style>
 .equipo-card {
-  background-color: rgba(0, 72, 255, 0.1);
+  background-color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  border-radius: 15px;
+  color: aliceblue;
 }
 
 .equipo-card:hover {
-  background-color: #03e2ff;
+  background-color: #4b0b55;
   color: white;
+}
+
+.card-escudo {
+  padding: 10px;
+}
+
+.card- {
+  max-width: 500px;
 }
 
 .card-title {
@@ -92,9 +102,5 @@ const buscarEquipo = async () => {
 
 .card-text {
   font-size: 0.9rem;
-}
-
-.img-fluid {
-  max-width: 200px;
 }
 </style>

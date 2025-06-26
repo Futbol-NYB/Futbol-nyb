@@ -30,9 +30,9 @@
       No se encontraron jugadores.
     </div>
 
-    <div v-else class="row g-4">
+    <div v-else class="row g-4 card-">
       <div v-for="jugador in jugadores" :key="jugador.idPlayer" class="">
-        <div class="card equipo-card h-100 text-center">
+        <div class="card jugador-card h-100 text-center">
           <div class="card-body">
             <img
               v-if="jugador.strCutout"
@@ -76,7 +76,7 @@ const buscarJugador = async () => {
 </script>
 
 <style scoped>
-.equipo-card {
+.jugador-card {
   background-color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -84,7 +84,7 @@ const buscarJugador = async () => {
   color: aliceblue;
 }
 
-.equipo-card:hover {
+.jugador-card:hover {
   background-color: #4b0b55;
   color: white;
 }
