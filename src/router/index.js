@@ -5,6 +5,7 @@ import TeamsView from '../views/TeamsView.vue'
 import SearchTeamView from '../views/SearchTeamView.vue'
 import PlayersView from '../views/PlayersView.vue'
 import SearchPlayerView from '../views/SearchPlayerView.vue'
+import MatchsLiveView from '../views/MatchsLiveView.vue'
 
 const routes = [
   {
@@ -39,6 +40,12 @@ const routes = [
     path: '/jugadores/:idTeam',
     name: 'Jugadores',
     component: PlayersView,
+    props: true
+  },
+  {
+    path: '/encuentros/partidosEnVido',
+    name: 'Encuentros',
+    component: MatchsLiveView,
     props: true
   }
 ]

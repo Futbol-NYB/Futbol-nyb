@@ -4,7 +4,7 @@
       Jugadores del <span class="text-info">{{ nombreEquipo || "equipo" }}</span>
     </h2>
 
-    <router-link to="/jugador/:nombreJugador" class="btn btn-outline-primary mb-4">
+    <router-link to="/jugador/Buscar" class="btn btn-outline-primary m-3">
       Buscar Jugador
     </router-link>
 
