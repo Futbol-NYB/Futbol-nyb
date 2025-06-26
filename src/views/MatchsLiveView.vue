@@ -1,6 +1,6 @@
 <template>
   <div class="live-matches">
-    <h2>⚽ Partidos en Vivo</h2>
+    <h2>Partidos en Vivo</h2>
     <div v-if="loading">Cargando...</div>
     <div v-else-if="matches.length === 0">No hay partidos en vivo.</div>
     <div v-else>
@@ -27,7 +27,7 @@ onMounted(async () => {
     matches.value = await getLiveMatches();
   };
   await updateMatches();
-  setInterval(updateMatches, 60000); // 60 segundos
+  setInterval(updateMatches, 60000);
 });
 
 onMounted(async () => {
