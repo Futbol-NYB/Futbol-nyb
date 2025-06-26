@@ -1,13 +1,54 @@
 const API_KEY = '123';
 const BASE_URL = `https://www.thesportsdb.com/api/v1/json/${API_KEY}`;
 
+export const getLigas = () => {
+  return [
+    { nombre: "English Premier League" },
+    { nombre: "Spanish La Liga" },
+    { nombre: "German Bundesliga" },
+    { nombre: "Italian Serie A" },
+    { nombre: "French Ligue 1" },
+    { nombre: "Belgian Pro League"},
+    { nombre: "English League Championship"},
+    { nombre: "Scottish Premier League"},
+    { nombre: "Greek Superleague Greece"},
+    { nombre: "Dutch Eredivisie"},
+  ]
+};
+
+
 export const getPaisesSeleccionados = () => {
   return [
     { name_en: "Argentina", code: "AR" },
-    { name_en: "Chile", code: "CL" },
-    { name_en: "England", code: "GB" },
-    { name_en: "Spain", code: "ES" },
-    { name_en: "Brazil", code: "BR" }
+  { name_en: "Brazil", code: "BR" },
+  { name_en: "Chile", code: "CL" },
+  { name_en: "Colombia", code: "CO" },
+  { name_en: "Mexico", code: "MX" },
+  { name_en: "Paraguay", code: "PY" },
+  { name_en: "Peru", code: "PE" },
+  { name_en: "Uruguay", code: "UY" },
+  { name_en: "Venezuela", code: "VE" },
+  { name_en: "Ecuador", code: "EC" },
+  { name_en: "Costa Rica", code: "CR" },
+  { name_en: "Bolivia", code: "BO" },
+  { name_en: "Spain", code: "ES" },
+  { name_en: "England", code: "GB" },
+  { name_en: "France", code: "FR" },
+  { name_en: "Germany", code: "DE" },
+  { name_en: "Italy", code: "IT" },
+  { name_en: "Portugal", code: "PT" },
+  { name_en: "Belgium", code: "BE" },
+  { name_en: "Turkey", code: "TR" },
+  { name_en: "Russia", code: "RU" },
+  { name_en: "Sweden", code: "SE" },
+  { name_en: "Norway", code: "NO" },
+  { name_en: "Denmark", code: "DK" },
+  { name_en: "Greece", code: "GR" },
+  { name_en: "Scotland", code: "SCO" },
+  { name_en: "Switzerland", code: "CH" },
+  { name_en: "Ukraine", code: "UA" },
+  { name_en: "Poland", code: "PL" },
+  { name_en: "Austria", code: "AT" }
   ];
 };
 

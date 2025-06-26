@@ -1,16 +1,35 @@
 <template>
   <div class="container py-5">
-    <h1 class="fw-bold p-5 text-center">
-      Países con <span class="text-info">Ligas de Fútbol</span>
+    <div class="">
+      <h1 class="fw-bold p-5 text-start">
+        Ligas de <span class="text-info">Fútbol Europeas</span>
+      </h1>
+      <router-link to="/equipo/Buscar" class="btn btn-outline-primary m-3">
+        Buscar Equipo
+      </router-link>
+
+      <router-link to="/jugador/Buscar" class="btn btn-outline-primary m-3">
+        Buscar Jugador
+      </router-link>
+      <div class="row g-4 mt-4">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          v-for="liga in ligas"
+          :key="liga.nombre"
+        >
+          <div
+            class="p-5 text-center rounded border shadow-sm liga-card"
+            @click="goToLiga(liga.nombre)"
+          >
+            {{ liga.nombre }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="fw-bold p-5 text-start">
+      Ligas del fútbol por <span class="text-info">Paises</span>
     </h1>
-
-    <router-link to="/equipo/Buscar" class="btn btn-outline-primary m-3">
-      Buscar Equipo
-    </router-link>
-
-    <router-link to="/jugador/Buscar" class="btn btn-outline-primary m-3">
-      Buscar Jugador
-    </router-link>
 
     <div class="row g-4 mt-4">
       <div
@@ -33,9 +52,15 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { getPaisesSeleccionados } from "../service/service";
+import { getLigas } from "../service/service.js";
 
 const paises = ref(getPaisesSeleccionados());
 const router = useRouter();
+const ligas = getLigas();
+
+const goToLiga = (nombre) => {
+  router.push(`/equipos/${encodeURIComponent(nombre)}`);
+};
 
 const goToLeagues = (pais) => {
   router.push({
