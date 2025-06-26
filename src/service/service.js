@@ -3,54 +3,86 @@ const BASE_URL = `https://www.thesportsdb.com/api/v1/json/${API_KEY}`;
 
 export const getLigas = () => {
   return [
-    { nombre: "English Premier League" },
-    { nombre: "Spanish La Liga" },
-    { nombre: "German Bundesliga" },
-    { nombre: "Italian Serie A" },
-    { nombre: "French Ligue 1" },
-    { nombre: "Belgian Pro League"},
-    { nombre: "English League Championship"},
-    { nombre: "Scottish Premier League"},
-    { nombre: "Greek Superleague Greece"},
-    { nombre: "Dutch Eredivisie"},
-  ]
+    {
+      nombre: "English Premier League",
+      logo: "../src/assets/logosLiga/PremierLeague.jpg"
+    },
+    {
+      nombre: "Spanish La Liga",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/ja4it51687628717.png"
+    },
+    {
+      nombre: "German Bundesliga",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/teqh1b1679952008.png"
+    },
+    {
+      nombre: "Italian Serie A",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/67q3q21679951383.png"
+    },
+    {
+      nombre: "French Ligue 1",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/9f7z9d1742983155.png"
+    },
+    {
+      nombre: "Belgian Pro League",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/mjit7n1593634474.png"
+    },
+    {
+      nombre: "English League Championship",
+      logo: "../src/assets/logosLiga/EFL.jpg"
+    },
+    {
+      nombre: "Scottish Premier League",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/gb4m951721302014.png"
+    },
+    {
+      nombre: "Greek Superleague Greece",
+      logo: "https://www.thesportsdb.com/images/media/league/badge/jm7ky01602788843.png"
+    },
+    {
+      nombre: "Dutch Eredivisie",
+      logo: "../src/assets/logosLiga/Eredivisie.jpg"
+    }
+  ];
 };
+
 
 
 export const getPaisesSeleccionados = () => {
   return [
-    { name_en: "Argentina", code: "AR" },
-  { name_en: "Brazil", code: "BR" },
-  { name_en: "Chile", code: "CL" },
-  { name_en: "Colombia", code: "CO" },
-  { name_en: "Mexico", code: "MX" },
-  { name_en: "Paraguay", code: "PY" },
-  { name_en: "Peru", code: "PE" },
-  { name_en: "Uruguay", code: "UY" },
-  { name_en: "Venezuela", code: "VE" },
-  { name_en: "Ecuador", code: "EC" },
-  { name_en: "Costa Rica", code: "CR" },
-  { name_en: "Bolivia", code: "BO" },
-  { name_en: "Spain", code: "ES" },
-  { name_en: "England", code: "GB" },
-  { name_en: "France", code: "FR" },
-  { name_en: "Germany", code: "DE" },
-  { name_en: "Italy", code: "IT" },
-  { name_en: "Portugal", code: "PT" },
-  { name_en: "Belgium", code: "BE" },
-  { name_en: "Turkey", code: "TR" },
-  { name_en: "Russia", code: "RU" },
-  { name_en: "Sweden", code: "SE" },
-  { name_en: "Norway", code: "NO" },
-  { name_en: "Denmark", code: "DK" },
-  { name_en: "Greece", code: "GR" },
-  { name_en: "Scotland", code: "SCO" },
-  { name_en: "Switzerland", code: "CH" },
-  { name_en: "Ukraine", code: "UA" },
-  { name_en: "Poland", code: "PL" },
-  { name_en: "Austria", code: "AT" }
+    { name_en: "Argentina", code: "ar", flag: "https://flagcdn.com/w80/ar.png" },
+    { name_en: "Brazil", code: "br", flag: "https://flagcdn.com/w80/br.png" },
+    { name_en: "Chile", code: "cl", flag: "https://flagcdn.com/w80/cl.png" },
+    { name_en: "Colombia", code: "co", flag: "https://flagcdn.com/w80/co.png" },
+    { name_en: "Mexico", code: "mx", flag: "https://flagcdn.com/w80/mx.png" },
+    { name_en: "Paraguay", code: "py", flag: "https://flagcdn.com/w80/py.png" },
+    { name_en: "Peru", code: "pe", flag: "https://flagcdn.com/w80/pe.png" },
+    { name_en: "Uruguay", code: "uy", flag: "https://flagcdn.com/w80/uy.png" },
+    { name_en: "Venezuela", code: "ve", flag: "https://flagcdn.com/w80/ve.png" },
+    { name_en: "Ecuador", code: "ec", flag: "https://flagcdn.com/w80/ec.png" },
+    { name_en: "Costa Rica", code: "cr", flag: "https://flagcdn.com/w80/cr.png" },
+    { name_en: "Bolivia", code: "bo", flag: "https://flagcdn.com/w80/bo.png" },
+    { name_en: "Spain", code: "es", flag: "https://flagcdn.com/w80/es.png" },
+    { name_en: "England", code: "gb", flag: "https://flagcdn.com/w80/gb.png" },
+    { name_en: "France", code: "fr", flag: "https://flagcdn.com/w80/fr.png" },
+    { name_en: "Germany", code: "de", flag: "https://flagcdn.com/w80/de.png" },
+    { name_en: "Italy", code: "it", flag: "https://flagcdn.com/w80/it.png" },
+    { name_en: "Portugal", code: "pt", flag: "https://flagcdn.com/w80/pt.png" },
+    { name_en: "Belgium", code: "be", flag: "https://flagcdn.com/w80/be.png" },
+    { name_en: "Turkey", code: "tr", flag: "https://flagcdn.com/w80/tr.png" },
+    { name_en: "Russia", code: "ru", flag: "https://flagcdn.com/w80/ru.png" },
+    { name_en: "Sweden", code: "se", flag: "https://flagcdn.com/w80/se.png" },
+    { name_en: "Norway", code: "no", flag: "https://flagcdn.com/w80/no.png" },
+    { name_en: "Denmark", code: "dk", flag: "https://flagcdn.com/w80/dk.png" },
+    { name_en: "Greece", code: "gr", flag: "https://flagcdn.com/w80/gr.png" },
+    { name_en: "Scotland", code: "gb-sct", flag: "https://flagcdn.com/w80/gb.png" }, // No ISO 3166-1 para Escocia
+    { name_en: "Switzerland", code: "ch", flag: "https://flagcdn.com/w80/ch.png" },
+    { name_en: "Ukraine", code: "ua", flag: "https://flagcdn.com/w80/ua.png" },
+    { name_en: "Poland", code: "pl", flag: "https://flagcdn.com/w80/pl.png" },
+    { name_en: "Austria", code: "at", flag: "https://flagcdn.com/w80/at.png" }
   ];
 };
+
 
 export const getLigasPorPais = async (pais, deporte = "Soccer") => {
   try {

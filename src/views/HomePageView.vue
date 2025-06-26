@@ -21,6 +21,8 @@
             class="p-5 text-center rounded border shadow-sm liga-card"
             @click="goToLiga(liga.nombre)"
           >
+            <img :src="liga.logo" :alt="liga.nombre" height="50" class="mb-2" />
+
             {{ liga.nombre }}
           </div>
         </div>
@@ -41,6 +43,7 @@
           class="p-5 text-center rounded border shadow-sm liga-card"
           @click="goToLeagues(pais.name_en)"
         >
+          <img :src="pais.flag" :alt="pais.name_en" width="40" class="me-2" />
           {{ pais.name_en }}
         </div>
       </div>
