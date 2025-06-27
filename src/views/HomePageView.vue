@@ -1,21 +1,20 @@
 <template>
   <div class="container py-5">
     <div class="">
+      <router-link to="/equipo/Buscar" class="btn-outline-primary m-3">
+        Buscar Equipo
+      </router-link>
+
+      <router-link to="/jugador/Buscar" class="btn-outline-primary m-3">
+        Buscar Jugador
+      </router-link>
+
+      <router-link to="/encuentros/partidosEnVido" class="btn m-3">
+        Programacion y partidos en vivo
+      </router-link>
       <h1 class="fw-bold p-5 text-start">
-        Ligas de <span class="text-info">Fútbol Europeas</span>
+        Ligas de <span class="text-info">Europa</span>
       </h1>
-      <router-link to="/jugador/Buscar" class="btn btn-outline-primary m-3">
-        Buscar Jugador
-      </router-link>
-
-      <router-link to="/jugador/Buscar" class="btn btn-outline-primary m-3">
-        Buscar Jugador
-      </router-link>
-
-      <router-link to="/encuentros/partidosEnVido" class="btn btn-outline-primary m-3">
-        Partidos en vivo
-      </router-link>
-
       <div class="row g-4 mt-4">
         <div
           class="col-12 col-sm-6 col-md-4 col-lg-3"
@@ -34,9 +33,7 @@
       </div>
     </div>
 
-    <h1 class="fw-bold p-5 text-start">
-      Ligas del fútbol por <span class="text-info">Paises</span>
-    </h1>
+    <h1 class="fw-bold p-5 text-start">Todas las <span class="text-info">Ligas</span></h1>
 
     <div class="row g-4 mt-4">
       <div
@@ -96,5 +93,15 @@ const goToLeagues = (pais) => {
 .liga-card:hover {
   background-color: #03e2ff;
   color: white;
+}
+
+.btn {
+  background-color: #03e2ff;
+  color: black;
+  padding: 10px;
+}
+
+.btn:hover {
+  background-color: #03e2ff8f;
 }
 </style>

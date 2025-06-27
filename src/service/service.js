@@ -154,3 +154,16 @@ export const getJugadorPorEquipo = async (idTeam) => {
     return [];
   }
 };
+
+export const getDetalleEquipo = async (teamId) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/lookupteam.php?id=${teamId}`
+    );
+    const data = await response.json();
+    return data.teams[0] || null;
+  } catch (error) {
+    console.error("Error fetching team details:", error);
+    throw error;
+  }
+};

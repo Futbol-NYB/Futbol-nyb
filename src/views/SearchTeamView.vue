@@ -32,7 +32,7 @@
 
     <div v-else class="row g-4 card-">
       <div v-for="equipo in equipos" :key="equipo.idTeam" class="">
-        <div class="equipo-card">
+        <div class="equipo-card" @click="goToDetailTeam(equipo.idTeam)">
           <div
             class="d-flex flex-column align-items-center justify-content-between text-center"
           >
@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 import { buscarEquipoPorNombre } from "../service/service.js";
 
@@ -58,6 +59,12 @@ const nombreEquipo = ref("");
 const equipos = ref([]);
 const loading = ref(false);
 const busquedaRealizada = ref(false);
+
+const router = useRouter();
+
+const goToDetailTeam = (teamId) => {
+  router.push({ name: "DetalleEquipo", params: { id: teamId } });
+};
 
 const buscarEquipo = async () => {
   if (!nombreEquipo.value.trim()) return;
