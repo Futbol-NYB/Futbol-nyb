@@ -41,7 +41,7 @@
             <p class="card-text">
               Fundación: {{ equipo.intFormedYear || "Desconocida" }}<br />
               Ubicación: {{ equipo.strLocation || "N/A" }}<br />
-              <small class="text-muted">{{ equipo.strLeague }}</small>
+              <small class="">{{ equipo.strLeague }}</small>
             </p>
           </div>
         </div>
@@ -86,6 +86,7 @@ const buscarEquipo = async () => {
   transition: background-color 0.3s, color 0.3s;
   border-radius: 15px;
   color: aliceblue;
+  padding: 20px;
 }
 
 .equipo-card:hover {

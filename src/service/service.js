@@ -167,3 +167,17 @@ export const getDetalleEquipo = async (teamId) => {
     throw error;
   }
 };
+
+//programacion de liga proximo encuentro
+export const getProgramacionLiga = async (idLeague) => {
+  try {
+    const response = await fetch (`${BASE_URL}/eventsnextleague.php?id=${idLeague}`);
+    const data = await response.json();
+    return data.teams || [];
+  } catch (error) {
+    console.error("Error fetching encuentros de la liga", error);
+    throw error;
+  }
+}
+
+
